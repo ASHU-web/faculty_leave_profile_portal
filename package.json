@@ -1,0 +1,29 @@
+{
+  "name": "dbms-proj-fin",
+  "version": "1.0.0",
+  "description": "This is our course project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashutosh and Ayush",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "connect-pg-simple": "^6.2.1",
+    "cookie-session": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-pg-session": "^1.1.0",
+    "express-rbac": "^1.2.0",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg": "^8.5.1",
+    "req-flash": "0.0.3"
+  }
+}
