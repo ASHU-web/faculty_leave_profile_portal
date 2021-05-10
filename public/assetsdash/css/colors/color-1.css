@@ -1,0 +1,79 @@
+
+:root{
+--color:#00a3e1;
+}
+.base-color,
+.btn-custom span:first-child i,
+.nav .nav-item .nav-link.active,
+.nav .nav-item .nav-link.active i,.header .profile .social-links ul li i,.about .bio .social-links li i
+,.services .item:hover .circle i,.services .item .circle i ,.pricing .content .price h3 span,
+portfolio .item .image:hover .overly .details a i:hover,
+.blog-single .data i:hover, .blog-single .data span:hover,
+.widget-categories ul a:hover,.widget-categories ul .badge-pill:hover,
+.portfolio .item .image:hover .overly .details a i:hover,
+.pagination li a {
+  color: var(--color);
+}
+
+.bg-base-color,
+.section-title:after,
+.section-title:before,.section-sub-title:after ,
+.btn-custom,::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:hover,
+.page-single .info-tab .back,
+.nav .nav-item .nav-link:after,
+.btn-toggler span ,.btn-toggler span:after, .btn-toggler span:before,.header,
+.testimonials .item .content .icon,.testimonials .item .content .author .dot,
+.testimonials .owl-dot.active span ,.resume .timeline .item:after,
+.resume .skills .skill-item .skill-progress .skill-progress-bar,.portfolio-single .features li:after,
+.blog .item .content .date a,.pagination li.active, .pagination li:hover,
+.widget-search .search-form .submit-btn,.loading .circle,
+.home .hero-9:after,
+.home .hero-11:before,
+.home .hero-12:after{
+  background-color: var(--color);
+}
+
+.testimonials .item .image img {
+  border: 4px solid var(--color);
+}
+
+
+.form .form-control:focus {
+  border-bottom: 1px solid var(--color);
+}
+
+.resume .timeline .item .content small ,
+.resume .timeline .item .content::after,
+.services .item .circle,.services .item:hover,
+.pricing .content .price,
+.pricing .content:before,.pricing .content:after,
+.contact .contact-info .item .icon,.page .bg-circles li{
+    background-color: rgba(0, 163, 225, 0.1);
+}
+.about .bio,
+.about .facts .fact-item ,.services .item ,.pagination li,
+.google-map,.widget-search .search-form .form-control:focus{
+    border: 1px solid rgba(0, 163, 225, 0.1);
+}
+.home .hero-8 img {
+  border: 10px solid var(--color);
+  -webkit-box-shadow: 0px 5px 30px 0px rgba(0, 163, 225, 0.1);
+          box-shadow: 0px 5px 30px 0px rgba(0, 163, 225, 0.1);
+}
+
+.home .hero-11:after {
+  border-top: 10px solid var(--color);
+  border-bottom: 10px solid var(--color);
+  border-left: 10px solid var(--color);
+}
+
+
+
+
+
+
+
+
+
+

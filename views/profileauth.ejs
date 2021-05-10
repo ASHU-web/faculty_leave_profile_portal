@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<style>
+  
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+    
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Full-width input fields */
+    .form-container input[type=text], .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #2b9b2f;
+      color: white;
+      padding: 10px 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    .form-container .butt{
+        background-color: #ff0000;
+      color: white;
+      padding: 10px 5px;
+      border: none;
+      cursor: pointer;
+      width: 50%;
+      margin-bottom:10px;
+      opacity: 0.5;
+    }
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: rgb(192, 74, 74);
+    }
+    /* Add a red background color to the cancel button */
+    .form-container .sendforimp {
+      background-color: rgb(228, 231, 48);
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    </style>
+
+    <!-- favicon -->
+    <link rel="icon" sizes="16x16" href="assetsdash/img/favicon.png">
+
+    <!-- Title -->
+    <title> Edit Profile Page</title>
+
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="assetsdash/css/all.css">
+    <link rel="stylesheet" href="assetsdash/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assetsdash/css/magnific-popup.css">
+    <link rel="stylesheet" href="assetsdash/css/owl.carousel.css">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Font Google -->
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="assetsdash/css/style.css">
+    <link rel="stylesheet" href="assetsdash/css/colors/color-1.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="1">
+    
+
+    <div class="page page-single">
+        <!--background -->
+        <div class="bg">
+            <ul class="bg-circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        
+
+        <div class="info-tab-area">
+            
+            <div class="container">
+                <button class="btn btn-danger"  ><a href="/logout" style="color: white">Logout</a></button>
+                <div class="info-tab-section">
+                    <!--header-->
+                   
+                    <div class="header d-flex align-items-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="profile d-flex align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <!-- <a href="home.ejs"><img src= "../assetsdash/img/profile.png"></a> -->
+                                            
+                                            <a href="home"><img src= "<%= allItems[0].profileurl%>"></a>
+                                         
+                                            <a  href="index-1.html" class="desc">
+                                                <h3 class="text-white mb-0"><%=userA%></h3>
+                                                <h6 class="text-white mb-0"><%= designationA%></h6>
+                                            </a>
+                                        </div>
+                                    
+
+                                        <!--social-links-->
+                                        <div class="social-links ml-auto">
+                                            <p class="text-white mb-5">Follow Me On:</p>
+                                            <ul class="list-inline">
+                                                <li><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#" class="text-white"><i class="fab fa-linkedin"></i></a></li>
+                                           
+                                            </ul>
+                                        </div>
+                                       
+
+                                        <!--btn-toggle-->
+                                        <div class="btn-toggler ml-auto" id="btnToggle">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <button class= "btn btn-warning" onclick="openForm4()">
+                      <span>
+                        <i class="fas fa-edit"></i>
+                    
+                      </span>
+                      
+                    <span>Change Profile Picture</span>
+                    </button>
+                                
+                    <div class="form-popup" id="myForm4">
+                      <form action="/profileauth" method="POST" class="form-container" >
+                          <button type="button" class="butt" onclick="closeForm4()">Close</button>
+                        <h5>Profile Picture</h5>
+                        <label for="comment" ><b>Link for Profile Picture</b></label>
+                        <input type="url" name="urlit4" cols="30" rows="2" class="form-control" placeholder="URL of Picture."  required>
+                                                           
+                      
+                        <p></p>
+                        <button type="submit" name =  "profilepic"  value= "kuchbhi" class="btn sendforimp" >Update Profile</button>
+                      </form>
+                 
+                   
+                    </div>
+                  
+
+                    <!--info-tab-->
+                    <div class="info-tab">
+                        <a href="/register" class="back"><i class="fas fa-angle-left"></i></a>   
+                        
+                        <!--tab-content-->
+                        <div class="tab-content" id="myTabContent">
+                            <!--Blog-single-->
+                            <div class="tab-pane fade show active">
+                                <div class="blog  blog-single section">
+                                    <div class="row">
+                                       
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-8 ">
+                                            <div class="content">                                           
+                                                
+                                                <div class="body mt-25 mb-30">
+                                                    <div class="data mb-20 mt-20">
+                                                        <p class="mb-0 text-dark">
+                                                          
+                                                            <span><i class="far fa-clock"></i>Email: <%= emailA%></span>
+                                                            <span><i class="fas fa-tag"></i>Designated as <%= designationA%></span>
+                                                        </p>
+                                                        <!-- <div class="social-links">
+                                                            <ul class="list-inline">
+                                                                <li class="text-dark font-w-600"> Share:</li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-facebook-f"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-instagram"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-dribbble"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-behance"></i></a></li>
+                                                            </ul>
+                                                        </div> -->
+                                                    </div>
+                                                    <% if(messages.success_msg){ %>
+                                                      <div class="alert alert-success" aria-label="close">
+                                                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <h6><%= messages.success_msg%></h6></div>
+                                                    <%}%>
+                                                    <% if(messages.failure_msg){ %>
+                                                      <div class="alert alert-danger" aria-label="close">
+                                                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <h6><%= messages.failure_msg%></h6></div>
+                                                    <%}%>
+
+
+                                                    
+                                                    <h5 class="text-dark mb-15">Background & research Interests:</h5>
+                                                    <button type="button" name="respreq" onclick="openForm()" class="btn btn-warning">
+                                                        <span>
+                                                            <i class="fas fa-edit"></i>
+                                                        
+                                                          </span>
+                                                          
+                                                        <span>Edit Background & research Interests</span>
+                                                       
+
+                                                           </button>
+                    
+                                                    <div class="form-popup" id="myForm">
+                                                        <form action="/profileauth" method="POST" class="form-container" >
+                                                            <button type="button" class="butt" onclick="closeForm()">Close</button>
+                                                          <h5>Edit Background & research Interests</h5>
+                                                          <p>Leave single space " " on both paragraphs in case you do not want to show it</p>
+                                                          <label for="comment" ><b>Highlighed Paragraph</b></label>
+                                                          <textarea  name="para1" cols="30" rows="2" class="form-control" placeholder="Generally, people explain about the Educational Background Here..." ></textarea>
+                                                          <label for="comment" ><b>Paragraph 2</b></label>
+                                                          <textarea name="para2" id="message2" cols="30" rows="2" class="form-control" placeholder="People generally explain about them and their researches..." ></textarea>
+                                                             
+                                                        
+                                                          <p></p>
+                                                          <button type="submit" name =  "approve" class="btn sendforimp" >Update Changes</button>
+                                                        </form>
+                                                      </div>
+                                                      <p class="quote bg-light text-justify"><%= allItems[0].background_para1%></p>
+                                                      <p class="text-justify"><%= allItems[0].background_para2%>
+                                                       </p>
+                                                       
+                                                 
+                                                    <button type="button" name="respreq" onclick="openForm5()" class="btn btn-warning">
+                                                      <span>
+                                                          <i class="fas fa-edit"></i>
+                                                      
+                                                        </span>
+                                                        
+                                                      <span>Add in Educational Background</span>
+                                                     
+
+                                                         </button>
+                  
+                                                  <div class="form-popup" id="myForm5">
+                                                      <form action="/profileauth" method="POST" class="form-container" >
+                                                          <button type="button" class="butt" onclick="closeForm5()">Close</button>
+                                                        <h5>Add Educational Background</h5>
+                                                        <label for="comment" ><b>Description</b></label>
+                                                                  <input type="text" name="descrip" cols="30" rows="2" class="form-control" placeholder="Description of Education"  required>
+                                                                  <label for="comment" ><b>Institute:</b></label>
+                                                                  <input type="text" name="instiname" cols="30" rows="2" class="form-control" placeholder="Institute Name eg. IIT Ropar"  required>
+                                                                  <label for="comment" ><b>Start Year</b></label>
+                                                                     <input type="text" name="syea" cols="30" rows="2" class="form-control" placeholder=" Start Year"  required>
+
+                                                                <label for="comment" ><b>End Year</b></label>
+                                                                     <input type="text" name="eyea" cols="30" rows="2" class="form-control" placeholder="End Year"  required>
+                                                                     
+                                                      
+                                                        <p></p>
+                                                        <button type="submit" name =  "approvekardo" value="yesss" class="btn btn-success" >Add Education</button>
+                                                      </form>
+                                                    </div>
+
+                                                    <h5 class="text-dark mb-15">Education:</h5>
+                                                
+                                                     <div class="row mb-30">
+                                                           <div class="col-lg-12">
+                                                             <div class="timeline">
+                                                                 <%allItems.forEach(function(item){%>
+                                                                     <%for(let i=0; i< item.educationalbackg.length; i++){%>
+                                                                 <div class="item">
+                                                                     <div class="content">
+                                                                         <h6 class="text-dark mb-10"><%=item.educationalbackg[i].institute%></h6>
+                                                                         <small class="base-color"><%=item.educationalbackg[i].start_year%> to <%=item.educationalbackg[i].end_year%></small>
+                                                                         <p class="text-dark mt-10 mb-0"><%=item.educationalbackg[i].description_edu%></p>
+                                                                       
+                                                                          <form action="/profileauth" method="POST"  ><button type="submit" name = "approvekardo" value="<%= item.educationalbackg[i]._id%>" class="btn btn-danger" ><i class= "fa fa-trash"></i></button></form>
+                                                           
+                                                                      
+                                                                     </div>
+                                                                 </div>
+                                                                 <%}%>
+                                                 <% })%>
+                 
+                                                             </div>
+                                                         </div>
+                                            
+                                                    
+                 
+                                                    
+                                                 </div>
+                                                 
+                                                 
+                                                        
+                                                        <h5 class="text-dark mb-15">Publications List:</h5>
+                                                       
+
+                                                        <button type="button" name="respreq" onclick="openForm1()" class="btn btn-warning">
+                                                            <span>
+                                                                <i class="fas fa-edit"></i>
+                                                            </span>
+                                                            <span>Add Publications</span>
+                                                        </button>
+                                                        <div class="form-popup" id="myForm1">
+                                                            <form action="/profileauth" method="POST" class="form-container" >
+                                                                <button class="butt" type="button" onclick="closeForm1()">Close</button>
+                                                              <h5>Add Publications</h5>
+                                                              <label for="comment" ><b>Publication Year</b></label>
+                                                              <input type="number" name="yearofpub" cols="30" rows="2" class="form-control" placeholder="Enter Publication Year"  required>
+                                                              <label for="comment" ><b>Title</b></label>
+                                                              <textarea name="titleforpub" id="message2" cols="30" rows="2" class="form-control" placeholder="Enter Title"></textarea>
+                                                              <label for="comment" ><b>Link for same</b></label>
+                                                              <input type="url" name="urlit" cols="30" rows="2" class="form-control" placeholder="URL to access more info"  required>
+                                                             <p>   --
+</p>                                                              <button type="submit" name = "approvepub" value="Acceptedpub"  class="btn" >Add to the List</button>
+                                                              
+                                                            </form>
+                                                          </div>
+                                                       
+
+                                                        <div class="w3-responsive">
+                                                            <table class="w3-table-all">
+                                                            <tr>
+                                                              <th>Publication Year</th>
+                                                              <th>Title</th>
+                                                              <th>Link for Details</th>
+                                                              <th>Remove From list</th>
+                                                             
+                                                            </tr>
+                                                            <%allItems.forEach(function(item){%>
+                                                              <%for(let i=0; i< item.publications.length; i++){%>
+                                                                <tr>
+                                                              <td><%=item.publications[i].publication_year%></td>
+                                                              <td><%=item.publications[i].title%></td>
+                                                              <td>
+                                                              <a href= "<%=item.publications[i].link%>"><button type = "button"class="btn btn-success" >Details</button>
+                                                              </td>
+                                                              <td>
+                                                                <form action="/profileauth" method="POST"  ><button type="submit" name = "approvepub" value="<%= item.publications[i]._id%>" class="btn btn-danger" ><i class= "fa fa-trash"></i></button></form>
+                                                              </td>
+                                                            </tr>
+                                                              <%}%>
+                                                         <% })%>
+                                                            </table>
+                                                            </div>
+
+                                                            <p></p>
+                                                            <h5 class="text-dark mb-15">Courses Taught:</h5>
+                                                            <button type="button" name="respreq" onclick="openForm2()" class="btn btn-warning">
+                                                                <span>
+                                                                    <i class="fas fa-edit"></i>
+                                                                </span>
+                                                                <span>Add Courses Taught</span>
+                                                            </button>
+                                                            <div class="form-popup" id="myForm2">
+                                                                <form action="/profileauth" method="POST" class="form-container" >
+                                                                    <button class="butt" type="button" onclick="closeForm2()">Close</button>
+                                                                  <h5>Add Courses</h5>
+                                                                  <label for="comment" ><b>Course Code</b></label>
+                                                                  <input type="text" name="coursecode" cols="30" rows="2" class="form-control" placeholder="Course ID eg CS-301"  required>
+                                                                  <label for="comment" ><b>Course Name</b></label>
+                                                                  <input type="text" name="coursename" cols="30" rows="2" class="form-control" placeholder="Name eg. DBMS"  required>
+                                                                  <label for="comment" ><b>Taught In year</b></label>
+                                                                     <input type="number" name="tinyear" cols="30" rows="2" class="form-control" placeholder="Year"  required>
+                                                                
+                                                                <p></p>
+                                                                  <button type="submit" name = "courselistadd" value="courseadd"  class="btn" >Add this to the list</button>
+                                                                  
+                                                                     </form>
+                                                              </div>
+                                                        <div class="w3-responsive">
+                                                            <table class="w3-table-all">
+                                                            <tr>
+                                                              <th>Course ID</th>
+                                                              <th>Course Name</th>
+                                                              <th>Taught in Year</th>
+                                                              <th>Remove from List</th>
+                                                              
+                                                             
+                                                            </tr>
+                                                            <%allItems.forEach(function(item){%>
+                                                              <%for(let i=0; i< item.courses.length; i++){%>
+                                                                <tr>
+                                                              <td><%=item.courses[i].coursecode%></td>
+                                                              <td><%=item.courses[i].coursename%></td>
+                                                              <td><%=item.courses[i].course_year%></td>
+                                                              <td> <form action="/profileauth" method="POST"> <button type="submit" name = "courselistadd" value="<%= item.courses[i]._id%>" class="btn btn-danger" ><i class= "fa fa-trash"></i></button></form></td>
+                                                              </tr>
+                                                              <%}%>
+                                                         <% })%>
+                                                            </table>
+                                                            </div>
+                                                            
+
+                                                        
+                                                </div>                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <!--Search-->
+                                            
+                                            <!--Categories-->
+                                            <!-- <div class="widget widget-categories mb-30">
+                                                <div class="section-sub-title mb-10">
+                                                    <h6>Info in a nutshell</h6>
+                                                </div>
+                                                <ul>
+                                                    <li class="cat-item d-flex align-items-center">
+                                                        <a href="#">Total Publications till date  </a>
+                                                        <span class="badge bg-light badge-pill ml-auto">5</span>
+                                                    </li>
+                                                    <li class="cat-item d-flex align-items-center">
+                                                        <a href="#">Number of courses taught</a>
+                                                        <span class="badge bg-light badge-pill ml-auto">15</span>
+                                                    </li>
+                                                    <li class="cat-item d-flex align-items-center">
+                                                        <a href="#">Experience(Years)</a>
+                                                        <span class="badge bg-light badge-pill ml-auto">10</span>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div> -->
+                                          
+                                            <!--Research Topics-->
+                                            <button type="button" name="respreq" onclick="openForm3()" class="btn btn-warning">
+                                                <span>
+                                                    <i class="fas fa-edit"></i>
+                                                </span>
+                                                <span>Add Research Topics</span>
+                                            </button>
+                                            <div class="form-popup" id="myForm3">
+                                                <form action="/profileauth" method="POST" class="form-container" >
+                                                    <button class="butt" type="button" onclick="closeForm3()">Close</button>
+                                                  <h5>Add Research Topics</h5>
+                                                  <label for="comment" ><b>Enter Topic Name</b></label>
+                                                  <input type="text" name="topicbtao" cols="30" rows="2" class="form-control" placeholder="Name of topic...."  required>
+                                                   
+                                                
+                                                  <button type="submit" name = "topicvalue" value="Add Topic"  class="btn" >Add Topic</button>
+                                                  
+                                                </form>
+                                              </div>
+                                            <div class="widget widget-tags mb-30">
+                                                <div class="section-sub-title mb-10">
+                                                    <h6>Research Topics</h6>
+                                                </div>
+                                                <ul class="list-inline">
+                                                  <%allItems.forEach(function(item){%>
+                                                    <%for(let i=0; i< item.researchTopics.length; i++){%>
+                                                    <li class="text-muted"><%=item.researchTopics[i]%> <form action="/profileauth" method="POST"><button type="submit" name="topicvalue" value = "<%= item.researchTopics[i]%>" class ="btn btn-danger" >x</button></form></li>
+                                                    <%}%>
+                                               <% })%>
+                                                   
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--loading -->
+    <div class="loading">
+        <div class="circle"></div>
+    </div>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assetsdash/js/jquery-3.5.0.min.js"></script>
+    <script src="assetsdash/js/popper.min.js"></script>
+    <script src="assetsdash/js/bootstrap.min.js"></script>
+
+    <!-- JS Plugins  -->
+    <script src="assetsdash/js/jquery.magnific-popup.min.js"></script>
+    <script src="assetsdash/js/ajax-contact.js"></script>
+    <script src="assetsdash/js/owl.carousel.min.js"></script>
+    <script src="assetsdash/js/main.js"></script>
+
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        function openForm1() {
+          document.getElementById("myForm1").style.display = "block";
+        }
+        
+        function closeForm1() {
+          document.getElementById("myForm1").style.display = "none";
+        }
+        function openForm2() {
+          document.getElementById("myForm2").style.display = "block";
+        }
+        
+        function closeForm2() {
+          document.getElementById("myForm2").style.display = "none";
+        }
+        function openForm3() {
+          document.getElementById("myForm3").style.display = "block";
+        }
+        
+        function closeForm3() {
+          document.getElementById("myForm3").style.display = "none";
+        }
+        function openForm4() {
+          document.getElementById("myForm4").style.display = "block";
+        }
+        
+        function closeForm4() {
+          document.getElementById("myForm4").style.display = "none";
+        }
+        function openForm5() {
+          document.getElementById("myForm5").style.display = "block";
+        }
+        
+        function closeForm5() {
+          document.getElementById("myForm5").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

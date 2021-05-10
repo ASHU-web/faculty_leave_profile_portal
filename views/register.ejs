@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Register Now</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css">
+
+    <!-- Custom Css --> 
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/theme-1.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/icon-114x114.png">
+
+
+  </head>
+  <body>
+
+
+    <div class="ugf-main-wrap ugf-bg">
+      <div class="ugf-header">
+        <div class="logo">
+          <a href="#"><img src="images/logo-dark.png" class="img-fluid" alt=""></a>
+        </div>
+      
+        <div class="alternet-access">
+          <p>Search For a Profile here: <a href="home"> Home Page</a></p>
+          <p>Already have an account? <a href="login">Log in now!</a></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="ugf-container">
+              <div class="content-wrap">
+                <div class="ugf-form-block-header">
+                  <h1>Register Your Account</h1>
+                  <p>Enter your Institute ID <br> to register your account</p>
+                </div>
+                
+               
+                <div class="ugf-input-block">
+                   
+                    <% if(typeof errors != 'undefined'){ %>
+                      <div class="alert alert-danger"> 
+                      <% errors.forEach(error=>{ %>
+                        <li><%= error.message %></li>
+                        <% }); %>
+                      </div>
+                      <% } %>
+
+                      
+                  <form action="/register" method= "POST">
+                    <div class="form-group">
+                      <input type="name" name = "name" class="form-control" id="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" name = "email" class="form-control" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group pass-block">
+                      <input type="password" name = "password"class="form-control" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group pass-block">
+                        <input type="password" name = "password2"class="form-control" id="password2" placeholder="Confirm Password" required>
+                      </div>
+                      
+                    <div class="form-group">
+                      <select type="text" class="form-control" id="department" name = "department"placeholder="Department Name" required>
+                        <option value="ME" >ME</option>
+                        <option value="CSE">CSE</option>
+                        <option value="CHE">CHE</option>
+                        <option value="EE">EE</option>
+                      </select>
+                    </div>
+					
+                    <button type="submit" value = "register" class="btn">Register Account</button>
+                    <p class="terms">This is Project for the Course DBMS in second semester of AY 2020-2021</p>
+                  </form>
+                </div>
+                <div class="alternet-access">
+                  <p>Already have an account? <a href="/login">Log in now!</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src="js/custom.js"></script>
+  </body>
+</html>

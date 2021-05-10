@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--custom table CSS-->
+
+<style>
+    #myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+    
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Full-width input fields */
+    .form-container input[type=text], .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    .form-container .butt{
+        background-color: #ff0000;
+      color: white;
+      padding: 10px 5px;
+      border: none;
+      cursor: pointer;
+      width: 30%;
+      margin-bottom:10px;
+      opacity: 0.5;
+    }
+    
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #247526;
+      color: white;
+      padding: 10px 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: rgb(192, 74, 74);
+    }
+    /* Add a red background color to the cancel button */
+    .form-container .sendforimp {
+      background-color: rgb(228, 231, 48);
+    }
+  
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    </style>
+
+
+        <style>
+            table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 3px solid rgb(228, 228, 228);
+            }
+            
+            th, td, tr {
+            text-align: center;
+            padding: 5px;
+            }
+            
+
+            tr:nth-child(even){background-color: #f5f5f5}
+
+            
+    
+        </style>
+
+    <!-- favicon -->
+    <link rel="icon" sizes="16x16" href="assetsdash/img/favicon.png">
+
+    <!-- Title -->
+    <title> Leave management Dashboard </title>
+
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="assetsdash/css/all.css">
+    <link rel="stylesheet" href="assetsdash/css/elegant-font-icons.css">
+    <link rel="stylesheet" href="assetsdash/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assetsdash/css/magnific-popup.css">
+    <link rel="stylesheet" href="assetsdash/css/owl.carousel.css">
+
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="assetsdash/css/style.css">
+    <link rel="stylesheet" href="assetsdash/css/colors/color-1.css">
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="1">
+
+    <div class="page">
+        <!--background -->
+        <div class="bg">
+            <ul class="bg-circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="info-tab-area">
+            <div class="container">
+                <button class="btn btn-danger"  ><a href="/logout" style="color: white">Logout</a></button>
+                <div class="info-tab-section">
+                    <!--header-->
+                    <div class="header d-flex align-items-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="profile d-flex align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <a href=""><img src= "<%= allItems[0].profileurl%>"></a>
+                                            <a class="desc" href="">
+                                                <h3 class="text-white mb-0">Prof. Rajeev Ahuja</h3>
+                                                <h6 class="text-white mb-0">Director IIT Ropar</h6>
+                                            </a>
+                                        </div>
+
+                                        <!--social-links-->
+                            
+
+                                        <!--btn-toggle-->
+                                        <div class="btn-toggler ml-auto" id="btnToggle">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--info-tab-->
+                    <div class="info-tab">
+                        <!--navigation-->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                    <span> <i class="fas fa-home"></i></span>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                          
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="portfolio-tab" data-toggle="tab" href="#portfolio" role="tab" aria-controls="portfolio" aria-selected="false">
+                                    <span><i class="fas fa-briefcase"></i></span>
+                                    <span>Faculty List</span>
+                                </a>
+                            </li>
+                            
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" id="portfolio-tab" data-toggle="tab" href="#portfolio2" role="tab" aria-controls="portfolio" aria-selected="false">
+                                    <span><i class="fas fa-briefcase"></i></span>
+                                    <span>Requests</span>
+                                </a>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link"   href="/profileauth" role="tab" aria-controls="contact" aria-selected="false">
+                                    <span><i class="fas fa-search"></i></span>
+                                    <span>Edit Profile</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+                                    <span><i class="fas fa-envelope"></i></span>
+                                    <span>Change POR</span>
+                                </a>
+                            </li>
+                           
+                        </ul>
+
+                        <!--tab-content-->
+                        <div class="tab-content" id="myTabContent">
+                            <!--Home-->
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="home-area d-flex align-items-center">
+                                    <div class="home section">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="hero">
+                                                    <img src="assetsdash/img/dir.gif" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 d-flex align-items-center">
+                                                <div class="content">
+                                                    <div class="section-title">
+                                                        <% if(messages.success_msg){ %>
+                                                            <div class="alert alert-success" aria-label="close">
+                                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                              <h6><%= messages.success_msg%></h6></div>
+                                                          <%}%>
+                                                          
+                                                        <% if(typeof errordir != 'undefined'){ %>
+                                                            <div class="alert alert-danger" aria-label="close"> 
+                                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                            <% errordir.forEach(errordas=>{ %>
+                                                              <li><%= errordas.message %></li>
+                                                              <% }); %>
+                                                            </div>
+                                                            <% } %>
+                                                        <h5>Welcome to the Faculty Leave Portal</h5>
+                                                    </div>
+                                                    <p class="max-width-400 text-dark mb-15">
+                                                       This is for the DBMS project purpose.
+                                                    </p>
+
+                                                    <ul class="info list-inline mb-15">
+                                                        <li class="text-dark"><span class="font-w-700">Designation: </span><a href= "" class="text-dark" >Director, IIT Ropar</a></li>
+                                                        <li class="text-dark"><span class="font-w-700">Email: </span><a href="" class="text-dark">director@iitrpr.ac.in</a></li>
+                                                        <li class="text-dark"><span class="font-w-700">Department Name :</span><a class="text-dark">Department of Physics</a> </li>
+                                                    </ul>
+
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            <!--Portfolio2-->
+                            <div class="tab-pane fade" id="portfolio2" role="tabpanel" aria-labelledby="portfolio-tab">
+                                <div class="portfolio section">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="section-title">
+                                                <h5>Current Requests to approve</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" name="respreq" onclick="openForm()" class="btn-custom">
+                                        <span>
+                                            
+                                        </span>
+                                        <span>Respond Request</span>
+                                    </button>
+                                    <div class="form-popup" id="myForm">
+                                        <form action="/dashboardir" method="POST" class="form-container" >
+                                            <button class="butt" onclick="closeForm()">Close</button>
+                                          <h1>Respond to request</h1>
+                                          <label for="comment" ><b>Enter Leave ID</b></label>
+                                          <input type="number" name="leaveid22" placeholder="Enter leave ID"  required>
+                                          <label for="comment" ><b>Any Comments?</b></label>
+                                          <textarea name="message22" id="message2" cols="30" rows="2" class="form-control" placeholder="Comment(Max character limit = 1000)"></textarea>
+                                             
+                                        
+                                          <button type="submit" name = "approve2" value="Accepted"  class="btn" >Approve</button>
+                                          <button type="submit" name = "approve2" value="Rejected" class="btn cancel" >Reject</button>
+                                          
+                                          <button type="submit" name =  "approve2" value="Resent for corrections" class="btn sendforimp" >Send For Improvements</button>
+                                        </form>
+                                      </div>
+                                    <div style="overflow-x:auto;">
+                                        <p>-------</p>
+                                           
+                                       
+                                        <table>
+                                            <tr>
+                                              <th>Leave ID</th>
+                                              <th>Name of Applicant</th>
+                                              <th>Start Date</th>
+                                              <th>End Date</th>
+                                              <!-- <th>Reason Mentioned</th> -->
+                                              <th>
+                                               Related Comments
+                                              </th>
+                                            </tr>
+                                            <% leaveddd2.forEach(function(row) { %>
+                                              <tr>
+                                                  <td>
+                                                      <%= row.leave_id %>
+                                                  </td>
+                                                  <td>
+                                                      <%= row.name %>
+                                                  </td>
+                                                  <td>
+                                                      <%= row.date_from.getFullYear()  %>-<%= row.date_from.getMonth()+1%>-<%= row.date_from.getDate()%>
+                                                  </td>
+                                                  <td>
+                                                      <%= row.date_to.getFullYear()  %>-<%= row.date_to.getMonth()+1%>-<%= row.date_to.getDate()%>
+                                                  </td>
+                                                  
+                                                  
+<!--                                                   
+                                                  <td>
+                                                      <%= row.reason %>
+                                                  </td> -->
+                                                  <td>
+                                                    
+                                                       <!-- Modal Header -->
+                                                        <!-- Modal body -->
+                                                        <div class="table">
+                                                            <table >
+                                                        
+                                                        <tr>
+                                                            <th>Commentor</th>
+                                                            <th>Comment</th>
+                                                           
+                                                        </tr>
+                                                        
+                                           <% pendign2.forEach(function(row2) { %>
+                                        
+                                                <% if(row2.leave_id === row.leave_id){%>
+                                                    <tr>
+                                                <td>
+                                                    <%= row2.commentor %>
+                                                </td>
+                                                
+                                                
+                                                <td>
+                                                    <%= row2.comment_text %>
+                                                </td>
+                                                   
+                                            </tr>
+                                                <%}%>
+                                             
+                                            <% }); %>
+                                          
+
+                                                       
+                                                    </table>
+                                                    </div>
+
+
+
+                                                  </td>
+                                              </tr>
+                                              <% }); %>
+                                            
+                                            
+                                          </table>
+                                      </div>
+                                    <!--items -->
+                                    <div class="inner-items">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6">
+                                                
+                                               
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            <!--Portfolio-->
+                            <div class="tab-pane fade" id="portfolio" role="tabpanel" aria-labelledby="portfolio-tab">
+                                <div class="portfolio section">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="section-title">
+                                                <h5>Faculty List</h5>
+                                              
+                                            </div>
+                                        </div>
+                                        <h6>Sort By:</h6>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary" onclick="sortTable(1)"> Department</button>
+                                    
+                                    
+                                    <button class="btn btn-primary" onclick="sortTable(3)"> Designation</button>
+                                    <p></p>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Names" title="Type in a name">
+                                    <div style="overflow-x:auto;">
+                                        <table id="myTable" >
+                                          <tr>
+                                            <th>Faculty Name</th>
+                                            <th>Department</th>
+                                            <th>Faculty ID</th>
+                                            <th>Designation</th>
+                                          </tr>
+
+                                           <% facdata2.forEach(function(row) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= row.name %>
+                                                </td>
+                                                
+                                                
+                                                <td>
+                                                    <%= row.department %>
+                                                </td>
+                                                
+                                                <td>
+                                                    <%= row.faculty_id %>
+                                                </td>
+                                                <td>
+                                                    <%= row.designation %> 
+                                                   <% if(row.designation !== "DOFA"){%>
+                                                    @ <%=  row.department%>
+                                                    <%}%>
+
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                          
+                                        </table>
+                                      </div>
+                                      <!--tempppppppp-->
+            
+                                            <!--enddddtempppppppp-->
+                                    <!--items -->
+                                    <div class="inner-items">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6">
+                                                
+                                               
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            
+                         <!--Request a leave-->
+                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="contact section">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="section-title">
+                                            <h5> Change CCF/HOD</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <form action="/dashboardir" method="POST" id="main_contact_form" class="form contact_form">
+                                            <div class="alert alert-success contact_msg " style="display: none" role="alert">
+                                                Changed Successfully
+
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <h6>Select POR:</h6>
+                                                <select type="department" class= "form-container" name = "porchange" id="inputDepartment" placeholder="Department Name" required>
+                                                <option value="HOD ME" >HOD ME</option>
+                                                <option value="HOD CSE">HOD CSE</option>
+                                                <option value="HOD CHE">HOD CHE</option>
+                                                <option value="HOD EE">HOD EE</option>
+                                                <option value = "DOFA">DOFA</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <input type="number" name="facID" id="name" class="form-control" placeholder="Enter Faculty ID">
+                                            </div>
+                                            
+                                            
+                                            
+
+                                            
+
+                                            
+
+                                            <button type="submit" name="submit" class="btn-custom">
+                                                <span>
+                                                    <i class=""></i>
+                                                </span>
+                                                <span> Change Person on POR</span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!--loading -->
+    <div class="loading">
+        <div class="circle"></div>
+    </div>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assetsdash/js/jquery-3.5.0.min.js"></script>
+    <script src="assetsdash/js/popper.min.js"></script>
+    <script src="assetsdash/js/bootstrap.min.js"></script>
+
+    <!-- JS Plugins  -->
+    <script src="assetsdash/js/jquery.magnific-popup.min.js"></script>
+    <script src="assetsdash/js/ajax-contact.js"></script>
+    <script src="assetsdash/js/owl.carousel.min.js"></script>
+    <script src="assetsdash/js/main.js"></script>
+    
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+    <script>
+        function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+
+        function sortTable(vari) {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[vari];
+      y = rows[i + 1].getElementsByTagName("TD")[vari];
+      // Check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        // If so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+        
+        </script>
+
+<!--script>
+    $(document).ready(function() {
+  //Fixing jQuery Click Events for the iPad
+  var ua = navigator.userAgent,
+    event = (ua.match(/iPad/i)) ? "touchstart" : "click";
+  if ($('.table').length > 0) {
+    $('.table .header').on(event, function() {
+      $(this).toggleClass("active", "").nextUntil('.header').css('display', function(i, v) {
+        return this.style.display === 'table-row' ? 'none' : 'table-row';
+      });
+    });
+  }
+})
+</script-->
+
+</body>
+</html>

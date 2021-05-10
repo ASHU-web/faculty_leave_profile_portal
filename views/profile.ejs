@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- favicon -->
+    <link rel="icon" sizes="16x16" href="../assetsdash/img/favicon.png">
+
+    <!-- Title -->
+    <title> Profile</title>
+
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="../assetsdash/css/all.css">
+    <link rel="stylesheet" href="../assetsdash/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assetsdash/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assetsdash/css/owl.carousel.css">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Font Google -->
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="../assetsdash/css/style.css">
+    <link rel="stylesheet" href="../assetsdash/css/colors/color-1.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="1">
+    
+
+    <div class="page page-single">
+        <!--background -->
+        <div class="bg">
+            <ul class="bg-circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        
+
+        <div class="info-tab-area">
+            
+            <div class="container">
+               
+                <div class="info-tab-section">
+                    <!--header-->
+                   
+                    <div class="header d-flex align-items-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="profile d-flex align-items-center">
+                                        <div class="d-flex align-items-center">
+                                           <img src= "<%= allItems[0].profileurl%>">
+                                            <a  href="" class="desc">
+                                                <h3 class="text-white mb-0"><%= namef.name%></h3>
+                                                <h6 class="text-white mb-0"><%= namef.designation%></h6>
+                                                <h6 class="text-white mb-0">Department: <%= namef.department%></h6>
+                                            </a>
+                                        </div>
+
+                                        <!--social-links-->
+                                        <div class="social-links ml-auto">
+                                            <p class="text-white mb-5">Follow Me On:</p>
+                                            <ul class="list-inline">
+                                                <li><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#" class="text-white"><i class="fab fa-linkedin"></i></a></li>
+                                           
+                                            </ul>
+                                        </div>
+
+                                        <!--btn-toggle-->
+                                        <div class="btn-toggler ml-auto" id="btnToggle">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--info-tab-->
+                    <div class="info-tab">
+                        <a href="/home" class="back"><i class="fas fa-angle-left"></i></a>   
+                        
+                        <!--tab-content-->
+                        <div class="tab-content" id="myTabContent">
+                            <!--Blog-single-->
+                            <div class="tab-pane fade show active">
+                                <div class="blog  blog-single section">
+                                  
+                                    <div class="row">
+                                        <div class="col-lg-8 ">
+                                            <div class="content">                                           
+                                                
+                                                <div class="body mt-25 mb-30">
+                                                   
+                                                    <div class="data mb-20 mt-20">
+                                                        <p class="mb-0 text-dark">
+                                                            <span><i class="far fa-clock"></i>Email: <%= namef.email%></span>
+                                                            <span><i class="fas fa-tag"></i>Designated as <%= namef.designation%></span>
+                                                        </p>
+                                                        <!-- <div class="social-links">
+                                                            <ul class="list-inline">
+                                                                <li class="text-dark font-w-600"> Share:</li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-facebook-f"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-twitter"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-instagram"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-dribbble"></i></a></li>
+                                                                <li><a href="#" class="text-dark"><i class="fab fa-behance"></i></a></li>
+                                                            </ul>
+                                                        </div> -->
+                                                    </div>
+                                                    
+                                                    <% if (allItems[0].background_para1 !== " " && allItems[0].background_para2 !== " "){%>
+                                                        <h5 class="text-dark mb-15">Background & research Interests:</h5>
+                                                        <p class="quote bg-light text-justify"><%= allItems[0].background_para1%></p>
+                                                           <p class="text-justify"><%= allItems[0].background_para2%>
+                                                            </p>
+                                                            <%}%>
+                                                            
+    
+                                                    <h5 class="text-dark mb-15">Education:</h5>
+                                                    <div class="row mb-30">
+                                                        <div class="col-lg-12">
+                                                            <div class="timeline">
+                                                                <%allItems.forEach(function(item){%>
+                                                                    <%for(let i=0; i< item.educationalbackg.length; i++){%>
+                                                                <div class="item">
+                                                                    <div class="content">
+                                                                        <h6 class="text-dark mb-10"><%=item.educationalbackg[i].institute%></h6>
+                                                                        <small class="base-color"><%=item.educationalbackg[i].start_year%> to <%=item.educationalbackg[i].end_year%></small>
+                                                                        <p class="text-dark mt-10 mb-0"><%=item.educationalbackg[i].description_edu%></p>
+                                                                    </div>
+                                                                </div>
+                                                                <%}%>
+                                                <% })%>
+                
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    
+                                                   
+                
+                                                   
+                                                </div>
+                                                
+
+                                                        <h5 class="text-dark mb-15">Publications List:</h5>
+                                                       
+                                                        <div class="w3-responsive">
+                                                            <table class="w3-table-all">
+                                                            <tr>
+                                                              <th>Publication Year</th>
+                                                              <th>Title</th>
+                                                              <th>Link for Details</th>
+                                                             
+                                                            </tr>
+                                                            <%allItems.forEach(function(item){%>
+                                                                <%for(let i=0; i< item.publications.length; i++){%>
+                                                                  <tr>
+                                                                <td><%=item.publications[i].publication_year%></td>
+                                                                <td><%=item.publications[i].title%></td>
+                                                                <td>
+                                                                <a href= "<%=item.publications[i].link%>"><button type = "button"class="btn btn-danger" >Details</button>
+                                                                </td>
+                                                              </tr>
+                                                                <%}%>
+                                                           <% })%>
+                                                            </table>
+                                                            </div>
+
+
+                                                            <h5 class="text-dark mb-15">Courses Taught:</h5>
+                                                       
+                                                        <div class="w3-responsive">
+                                                            <table class="w3-table-all">
+                                                            <tr>
+                                                              <th>Course ID</th>
+                                                              <th>Course Name</th>
+                                                              <th>Taught in Year</th>
+                                                             
+                                                            </tr>
+                                                            
+                                                            <%allItems.forEach(function(item){%>
+                                                                <%for(let i=0; i< item.courses.length; i++){%>
+                                                                  <tr>
+                                                                <td><%=item.courses[i].coursecode%></td>
+                                                                <td><%=item.courses[i].coursename%></td>
+                                                                <td><%=item.courses[i].course_year%></td>
+                                                                </tr>
+                                                                <%}%>
+                                                           <% })%>
+                                                            </table>
+                                                            </div>
+                                                            
+
+                                                        
+                                                </div>                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            
+                                            <!-- <div class="widget widget-categories mb-30">
+                                                <div class="section-sub-title mb-10">
+                                                    <h6>Info in a nutshell</h6>
+                                                </div>
+                                                <ul>
+                                                    <li class="cat-item d-flex align-items-center">
+                                                        <a href="#">Total Publications till date  </a>
+                                                        <span class="badge bg-light badge-pill ml-auto">5</span>
+                                                    </li>
+                                                    <li class="cat-item d-flex align-items-center">
+                                                        <a href="#">Number of courses taught</a>
+                                                        <span class="badge bg-light badge-pill ml-auto"><%= allItems.courseno%></span>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div> -->
+                                          
+                                            <!--Research Topics-->
+                                            <div class="widget widget-tags mb-30">
+                                                <div class="section-sub-title mb-10">
+                                                    <h6>Research Topics</h6>
+                                                </div>
+                                                <ul class="list-inline">
+                                                    <%allItems.forEach(function(item){%>
+                                                        <%for(let i=0; i< item.researchTopics.length; i++){%>
+                                                        <li class="text-muted"><%=item.researchTopics[i]%></li>
+                                                        <%}%>
+                                                   <% })%>
+                                                   
+                                                    
+                                                   
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--loading -->
+    <div class="loading">
+        <div class="circle"></div>
+    </div>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../assetsdash/js/jquery-3.5.0.min.js"></script>
+    <script src="../assetsdash/js/popper.min.js"></script>
+    <script src="../assetsdash/js/bootstrap.min.js"></script>
+
+    <!-- JS Plugins  -->
+    <script src="../assetsdash/js/jquery.magnific-popup.min.js"></script>
+    <script src="../assetsdash/js/ajax-contact.js"></script>
+    <script src="../assetsdash/js/owl.carousel.min.js"></script>
+    <script src="../assetsdash/js/main.js"></script>
+
+</body>
+
+</html>

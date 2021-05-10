@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css">
+
+    <!-- Custom Css --> 
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/theme-1.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/icon-114x114.png">
+
+
+  </head>
+  <body>
+
+
+    <div class="ugf-main-wrap ugf-bg">
+      <div class="ugf-header">
+        <div class="logo">
+          <a href="#"><img src="images/logo-dark.png" class="img-fluid" alt=""></a>
+        </div>
+        <div class="alternet-access">
+          <p>Search For a Profile here: <a href="home"> Home Page</a></p>
+          <p>Don't have an account? <a href="/register">Register now!</a></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="ugf-container pt200">
+              <div class="content-wrap">
+                <div class="ugf-form-block-header">
+                  <h1>Welcome Back!</h1>
+                 <ul>
+                  <% if(messages.success_msg){ %>
+                    <div class="alert alert-success">
+                      <h6><%= messages.success_msg%></h6></div>
+                  <%}%>
+                      <% if(messages.error){ %>
+                        <div class="alert alert-danger">
+                        <h6><%= messages.error%></h6 ></div>
+                      <%}%>
+                  </ul>
+                  <p>Enter your email address and password to <br> get access your account</p>
+                </div>
+                <div class="ugf-input-block">
+                  <form action="/login" method="POST">
+                    <div class="form-group">
+                      <input type="email" class="form-control" name = "email" id="email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group pass-block">
+                      <input type="password" class="form-control" name = "password" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" value = "login"class="btn">Login Account</button>
+                    <a href="forget.html" class="forget-pass">Forget Password?</a>
+                  </form>
+                </div>
+                
+                
+                <div class="alternet-access">
+                 
+                  <p>Don't have an account? <a href="register">Register now!</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src="js/custom.js"></script>
+  </body>
+
+<!-- Mirrored from uigaint.com/demo/html/anfra_2/register-2/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Apr 2021 21:28:27 GMT -->
+</html>
