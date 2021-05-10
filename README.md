@@ -12,11 +12,17 @@ This is a proper application developed for the Faculty leave management system a
 * mongoose - for the integration of MongoDB as a NoSQL database for the Public profile data-part
 * pg - Used for the integration of POSTGRESQL as a SQL Database.
 
+## Database Details Used
+We used MongoDB as a NoSQL database in the project to store the Public profile of the user and PostgreSQL to store the details of Leave management system. The details of MongoDB can be understood from [this document](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/MongoDB%20database%20Details.pdf) 
+
+The details for Relational Database made on PostgreSQL are as follows:
+
+Please check [this link](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf) for further information.
 
 
-
+## TEAM for the Project
 * **Ashutosh Garg**  - [ASHU-web](https://github.com/ASHU-web) - [Homepage](https://ashu-web.github.io)
-* **Ayush Agarwal**  - 
+* **Ayush Agarwal**  
 
 ## Acknowledgments
 
