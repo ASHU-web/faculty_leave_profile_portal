@@ -31,7 +31,7 @@ git clone https://github.com/ASHU-web/faculty_leave_profile_portal.git
 
 ## TEAM for the Project
 * **Ashutosh Garg**  - [ASHU-web](https://github.com/ASHU-web) - [Homepage](https://ashu-web.github.io)
-* **Ayush Agarwal**  
+* **Ayush Agarwal**  -[ayushag-glitch](https://github.com/ayushag-glitch)
 
 ## Acknowledgments
 
