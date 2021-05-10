@@ -15,8 +15,8 @@ This is a proper application developed for the Faculty leave management system a
 ## Database Details Used
 We used MongoDB as a NoSQL database in the project to store the Public profile of the user and PostgreSQL to store the details of Leave management system. The details of MongoDB can be understood from [this document](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/MongoDB%20database%20Details.pdf) 
 
-The details for Relational Database made on PostgreSQL are as follows:
-<img src="./Examples/relational.png" width="60%" alt="hypergraph_layer">
+The details for Relational Database made on PostgreSQL are as follows://
+<img src="./Examples/relational.PNG" width="60%" alt="relational Database Details">
 Please check [this link](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf) for further information. 
 Note: You can find the Triggers and functions related to the Relational database in the link mentioned above or you can also access it by [clicking here](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf).
 
