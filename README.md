@@ -36,3 +36,4 @@ git clone https://github.com/ASHU-web/faculty_leave_profile_portal.git
 ## Acknowledgments
 
 * [Dr. Viswanath Gunturi](http://cse.iitrpr.ac.in/~gunturi/): for making us work on this in **Database Management Systems** course.
+
