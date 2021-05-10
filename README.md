@@ -17,7 +17,8 @@ We used MongoDB as a NoSQL database in the project to store the Public profile o
 
 The details for Relational Database made on PostgreSQL are as follows:
 
-Please check [this link](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf) for further information.
+Please check [this link](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf) for further information. 
+Note: You can find the Triggers and functions related to the Relational database in the link mentioned above or you can also access it by [clicking here](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf).
 
 
 ## TEAM for the Project
