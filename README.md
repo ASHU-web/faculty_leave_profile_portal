@@ -23,9 +23,18 @@ Image is made using [dbdiagram.io](https://dbdiagram.io/home)
 Please check [this link](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf) for further information. 
 Note: You can find the Triggers and functions related to the Relational database in the link mentioned above or you can also access it by [clicking here](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf).
 
-## Frontend Explanation
+## Frontend Glimpses
+
+CLI Image showong the data fetched from the PostgreSQL database and Only Encrypted password can be seen:
 <img src="./Examples/Encrypted Password in Database using Bcry.jpeg" width="60%" alt="Encrypted Password in Database using Bcrypt">
 
+Login Page:
+<img src="./Examples/Login Page.jpeg" width="60%" alt="Login Page">
+
+Home Page For public Profile Access:
+<img src="./Examples/Faculty List Publically Available.jpeg" width="60%" alt="Faculty List Publically Available">
+Logged In profile:
+<img src="./Examples/Logged In Profile.jpeg" width="60%" alt="Logged In Profile">
 
 
 ## Clone project via:
