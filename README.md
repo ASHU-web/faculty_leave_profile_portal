@@ -25,7 +25,7 @@ Note: You can find the Triggers and functions related to the Relational database
 
 ## Frontend Glimpses
 
-### CLI Image showong the data fetched from the PostgreSQL database and Only Encrypted password can be seen:
+### CLI Image showing the data fetched from the PostgreSQL database and Only Encrypted password can be seen:
 <img src="./Examples/Encrypted Password in Database using Bcry.jpeg" width="60%" alt="Encrypted Password in Database using Bcrypt">
 
 ### Login Page:
