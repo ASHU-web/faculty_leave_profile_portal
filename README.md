@@ -23,7 +23,12 @@ Image is made using [dbdiagram.io](https://dbdiagram.io/home)
 Please check [this link](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf) for further information. 
 Note: You can find the Triggers and functions related to the Relational database in the link mentioned above or you can also access it by [clicking here](https://github.com/ASHU-web/faculty_leave_profile_portal/blob/main/PostgreSQL%20database%20Details.pdf).
 
-## How to Use
+## Frontend Explanation
+<img src="./Examples/Encrypted Password in Database using Bcry.jpeg" width="60%" alt="Encrypted Password in Database using Bcrypt">
+
+
+
+## Clone project via:
 ```bash
 git clone https://github.com/ASHU-web/faculty_leave_profile_portal.git
 ```
