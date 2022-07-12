@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Facultymongo = mongoose.model('Facultymongo')
-
+const { pool } = require("../dbConfig");
+const flash = require("express-flash");
 
 const getdashboardir = async function (req, res) {
     const facdata = await pool.query(`select * from faculty

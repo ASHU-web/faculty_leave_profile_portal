@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Facultymongo = mongoose.model('Facultymongo')
-
+const { pool } = require("../dbConfig");
 
 const getprofile = async (req, res) => {
     console.log(req.params.nameit);

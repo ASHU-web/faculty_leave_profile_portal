@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Facultymongo = mongoose.model('Facultymongo')
-
+const flash = require("express-flash");
 
 const getprofileauth =  (req, res) => {
     Facultymongo.find({ emailID: req.user.email }, (err, foundItems) => {

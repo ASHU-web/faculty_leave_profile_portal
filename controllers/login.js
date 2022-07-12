@@ -1,4 +1,5 @@
 const passport = require("passport");
+const { pool } = require("../dbConfig");
 
 const getlogin = async function (req, res) {
     await pool.query(`update update_date set today = Current_date`);

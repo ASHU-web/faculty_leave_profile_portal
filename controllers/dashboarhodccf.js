@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Facultymongo = mongoose.model('Facultymongo')
-
+const { pool } = require("../dbConfig");
+const flash = require("express-flash");
 
 const getdashboardccf = async function (req, res) {
     if (req.user.designation === "HOD") {
