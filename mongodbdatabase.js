@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const router = express.Router()
 
 
 mongoose.set("useNewUrlParser", true);

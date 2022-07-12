@@ -10,18 +10,15 @@ function checkAuthenticated(req, res, next) {
     }
   
     next();
-  }
+}
   
-  function checkNotAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-      return next();
-    }
-    res.redirect("/login");
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
   }
+  res.redirect("/login");
+}
   
-  app.listen(3000, function () {
-    console.log("Listening to port 3000..");
-  });
 
 module.exports = {
   checkAuthenticated,

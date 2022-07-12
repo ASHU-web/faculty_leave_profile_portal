@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-const Facultymongo = mongoose.model('Facultymongo')
 const { pool } = require("../dbConfig");
 const flash = require("express-flash");
+
+const Facultymongo = mongoose.model('Facultymongo')
 
 const getregister = function (req, res) {
     res.render("register");

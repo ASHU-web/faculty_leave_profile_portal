@@ -3,7 +3,7 @@ const router = express.Router()
 const {
   getdashboardccf,
   postdashboardccf } = require("../controllers/dashboarhodccf")
-const checkNotAuthenticated = require("../controllers/auth")
+const { checkNotAuthenticated } = require("../controllers/auth")
 
 router.get("/", checkNotAuthenticated, getdashboardccf);
 router.post("/", postdashboardccf);

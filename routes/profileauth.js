@@ -1,5 +1,5 @@
 const express = require("express");
-const { getprofileauth, postprofileauth } = require("../controllers/profileauth");
+// const { getprofileauth, postprofileauth } = require("../controllers/profileauth");
 const router = express.Router()
 const {
   getprofileauth,

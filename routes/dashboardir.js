@@ -4,7 +4,7 @@ const {
 getdashboardir,
 postdashboardir} = require('../controllers/dashboardir')
 
-const checkNotAuthenticated = require("../controllers/auth")
+const { checkNotAuthenticated } = require("../controllers/auth")
 router.get("/", checkNotAuthenticated,getdashboardir );
 router.post("/", postdashboardir);
 
